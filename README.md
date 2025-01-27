@@ -5,38 +5,38 @@ Overview
 
 This is a MERN stack-based PDF editor application that allows users to:
 
-Upload a PDF file.
+- Upload a PDF file.
 
-Reorder the pages of the PDF by selecting pages in a specific order.
+- Reorder the pages of the PDF by selecting pages in a specific order.
 
-Generate and download a new PDF with the selected order.
+- Generate and download a new PDF with the selected order.
 
-Save the new PDF file for later access.
+- Save the new PDF file for later access.
+- 
 
 The application includes user authentication and uses TypeScript for both frontend and backend development.
 
-Features
+Features:
 
-Upload PDFs: Users can upload PDF files to the server.
+- Upload PDFs: Users can upload PDF files to the server.
 
-Page Reordering: Users can select pages in their desired order to create a new PDF.
+- Page Reordering: Users can select pages in their desired order to create a new PDF.
 
-Download New PDF: The newly created PDF can be downloaded.
+- Download New PDF: The newly created PDF can be downloaded.
 
-Saved PDFs: PDFs are saved for later access and reference.
 
-Tech Stack
+Tech Stack:
 
-Frontend: React, TypeScript
+- Frontend: React, TypeScript
 
-Backend: Node.js, Express, TypeScript
+- Backend: Node.js, Express, TypeScript
 
-Database: MongoDB
+- Database: MongoDB
 
 Libraries:
 
-pdf-lib: Used for manipulating PDFs.
+- pdf-lib: Used for manipulating PDFs.
 
-axios: For API calls.
+- axios: For API calls.
 
-mongoose: For MongoDB schema and database interactions.
+- mongoose: For MongoDB schema and database interactions.
