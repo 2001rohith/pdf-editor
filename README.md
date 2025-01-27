@@ -12,7 +12,7 @@ This is a MERN stack-based PDF editor application that allows users to:
 - Generate and download a new PDF with the selected order.
 
 - Save the new PDF file for later access.
-- 
+  
 
 The application includes user authentication and uses TypeScript for both frontend and backend development.
 
