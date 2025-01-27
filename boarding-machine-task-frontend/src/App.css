@@ -1,0 +1,106 @@
+/* Wrapper styles */
+body {
+  background-color: #d0d9ff;
+
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Container styles */
+.container {
+  max-width: 500px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+/* Title and heading */
+.login-title,
+.heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Form styles */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.sign-in-button {
+  background-color: #a4b4fd;
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.sign-in-button:hover {
+  color: #5d7afd;
+  background-color: #8b9ffb;
+}
+
+.login-title{
+  color: #5d7afd;
+}
+
+/* Small warning text */
+.warning-text {
+  color: #e74c3c;
+  font-size: 0.875rem;
+}
+
+/* Links */
+.sign-in-up-link a {
+  margin-left: 5px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.sign-in-up-link a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .login-title {
+    font-size: 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.25rem;
+  }
+
+  .sign-in-button {
+    font-size: 0.875rem;
+  }
+}
