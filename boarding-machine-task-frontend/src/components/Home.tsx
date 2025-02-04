@@ -26,37 +26,52 @@ const Home: React.FC = () => {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
+    
     if (selectedFile?.type === "application/pdf") {
       setFile(selectedFile);
       setMessage(null);
     } else {
       setMessage("Please upload a valid PDF file.");
+      setFile(null);      // Reset file
+      setPdfPath(null);   // Clear previous PDF preview
+      setNumPages(0);     // Reset page count
     }
-  };
+};
 
-  const handleFileUpload = async () => {
-    if (!file) {
-      setMessage("No file selected.");
-      return;
-    }
 
-    try {
-      const response = await uploadPDF(file, userId);
-      const sanitizedPdfPath = response.pdfPath.replace(/\\/g, "/");
 
-      setPdfPath(sanitizedPdfPath);
-      setMessage("File uploaded successfully.");
+const handleFileUpload = async () => {
+  if (!file) {
+    setMessage("No file selected.");
+    return;
+  }
+  
+  if (file.type !== "application/pdf") {
+    setMessage("Please upload a valid PDF file.");
+    setFile(null); // Reset file on invalid selection
+    setPdfPath(null);
+    setNumPages(0);
+    return;
+  }
 
-      const existingPdfBytes = await fetch(sanitizedPdfPath).then((res) =>
-        res.arrayBuffer()
-      );
-      const pdfDoc = await PDFDocument.load(existingPdfBytes);
-      setNumPages(pdfDoc.getPageCount());
-    } catch (error: any) {
-      setMessage("Error uploading file. Please try again.");
-      console.error(error);
-    }
-  };
+  try {
+    const response = await uploadPDF(file, userId);
+    const sanitizedPdfPath = response.pdfPath.replace(/\\/g, "/");
+
+    setPdfPath(sanitizedPdfPath);
+    setMessage("File uploaded successfully.");
+
+    const existingPdfBytes = await fetch(sanitizedPdfPath).then((res) =>
+      res.arrayBuffer()
+    );
+    const pdfDoc = await PDFDocument.load(existingPdfBytes);
+    setNumPages(pdfDoc.getPageCount());
+  } catch (error: any) {
+    setMessage("Error uploading file. Please try again.");
+    console.error(error);
+  }
+};
+
 
   const handleCheckboxChange = (pageNumber: number) => {
     setSelectedPages((prev) => {
