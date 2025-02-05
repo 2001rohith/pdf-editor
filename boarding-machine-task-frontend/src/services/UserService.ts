@@ -15,6 +15,7 @@ export const handleSignup = async (payload: SignupPayload) => {
 
 export const handleLogin = async (email: string, password: string) => {
   console.log("log from user service")
+  console.log(`backend url ${BACKEND_URL}` )
   const response = await axios.post(`${BACKEND_URL}/login`, { email, password });
   return response.data;
 };
